@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comprar - TecnoMarket</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">TecnoMarket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#productos">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="comprar.html">Comprar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="login.html">Iniciar Sesión</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Compra Form -->
+  <div class="container mt-5">
+    <h2 class="text-center mb-4">Formulario de Compra</h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-body">
+            <form id="comprarform">
+              <div class="form-group">
+                <label for="nombre">Nombre Completo</label>
+                <input type="text" class="form-control" id="name" placeholder="Introduce tu nombre completo">
+              </div>
+              <div class="form-group">
+                <label for="direccion">Dirección</label>
+                <input type="text" class="form-control" id="direccion" placeholder="Introduce tu dirección">
+              </div>
+              <div class="form-group">
+                <label for="telefono">Número de Teléfono</label>
+                <input type="tel" class="form-control" id="numerotel" placeholder="Introduce tu número de teléfono">
+              </div>
+              <div class="form-group">
+                <label for="email">Correo Electrónico</label>
+                <input type="email" class="form-control" id="email" placeholder="Introduce tu correo electrónico">
+              </div>
+              <div class="form-group">
+                <label for="producto">Producto</label>
+                <select class="form-control" id="producto">
+                  <option value="1">Laptop</option>
+                  <option value="2">Mouse</option>
+                  <option value="3">Teclado</option>
+                  <option value="4">Targeta Grafica</option>
+                  <option value="5">Altavoces G560</option>
+                  <option value="6">Memoria RAM</option>
+                  <option value="7">Teclado</option>
+                  <option value="8">Monitor curvo</option>
+                  <option value="9">Case</option>
+                  <option value="10">Auriculares</option>
+                  <option value="11">Motherboard  ROG MAXIMUS Z690 EXTREME</option>
+                  <option value="12">Windows 11 Pro</option>
+                  
+                  <!-- Puedes añadir más opciones aquí -->
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="cantidad">Cantidad</label>
+                <input type="number" class="form-control" id="cantidad" placeholder="Introduce la cantidad">
+              </div>
+              <button type="submit" class="btn btn-primary btn-block">Comprar</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    <div class="container">
+      <p class="m-0">© 2024 TecnoMarket. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    // Obtener el valor guardado en localStorage
+    var itemValue = localStorage.getItem("item");
+
+    // Verificar si el valor existe y es un número válido
+    if (itemValue && !isNaN(itemValue)) {
+      // Seleccionar la opción correspondiente al valor guardado
+      var selectElement = document.getElementById('producto');
+      var options = selectElement.options;
+
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].value === itemValue) {
+          options[i].setAttribute('selected', 'selected');
+          break;
+        }
+      }
+    }
+
+    document.getElementById('comprarform').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evita que el formulario se envíe normalmente
+
+      // Obtener los datos del formulario
+      const name = document.getElementById('name').value;
+      const direccion = document.getElementById('direccion').value;
+      const numerotel = document.getElementById('numerotel').value;
+      const correo = document.getElementById('email').value;
+      const producto = document.getElementById('producto').value;
+      const cantidad = document.getElementById('cantidad').value;
+
+
+      // Configurar la petición Fetch
+       fetch('https://backend-production-5fcc.up.railway.app/user', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, direccion, numerotel, correo, producto, cantidad })
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          if (localStorage.getItem("login") === "ok") {
+            window.location.href = 'DetalleVenta.html';
+          } else {
+            window.location.href = 'login.html';
+          }
+          //return response.json();
+        })
+        .then(data => {
+          // Aquí manejas la respuesta de la API
+          console.log(data);
+        })
+        .catch(error => {
+          // Manejar errores
+          console.error('Error fetching data:', error);
+        });
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artículos Informáticos</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Artículos Informáticos</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Nuestros Productos</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/1.jpg" class="card-img-top" alt="Producto 4">
+                    <div class="card-body">
+                        <h5 class="card-title">Targeta Grafica</h5>
+                        <p class="card-text">Tarjetas de EVGA GeForce Serie RTX 20 que ocupan 2.75 ranuras son más grandes, 
+                            pero permiten un mejor flujo de aire y presión de aire. Utilizando un cubo de ventilador más alto,
+                            estos ventiladores están diseñados específicamente para que el disipador térmico más grueso aplique 
+                            más fuerza con menos ruido.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(4)">Comprar</a>
+                            <small class="text-muted">$700</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/2.jpg" class="card-img-top" alt="Producto 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Altavoces G560</h5>
+                        <p class="card-text">G560 se conecta a varias fuentes y las usa combinadamente: USB, 3,5 mm y Bluetooth. 
+                            Con Logitech Easy-Switch puedes alternar fácilmente entre 4 dispositivo conectados.
+                            Se requiere una conexión USB para audio genuinamente digital, iluminación RGB LIGHTSYNC
+                             y sonido envolvente DTS:X Ultra.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(5)">Comprar</a>
+                            <small class="text-muted">$100</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/3.jpg" class="card-img-top" alt="Producto 3" style="width: 350px; height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Memoria RAM</h5>
+                        <p class="card-text">Kingston agiliza y facilita la selección de una memoria RAM compatible
+                             con su PC de sobremesa, portátil o servidor. Puede buscar por sistema de marca de OEM,
+                              número de referencia de memoria de OEM o especificaciones de la memoria.   
+                        </p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(6)">Comprar</a>
+                            <small class="text-muted">$80</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/4.jpg" class="card-img-top" alt="Producto 4" style="width: 350px; height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Teclado</h5>
+                        <p class="card-text">Los interruptores mecánicos de perfil bajo ofrecen una sensación de escritura
+                             profunda y reconfortante. Los dedos se deslizan sin esfuerzo por la superficie mate de las teclas,
+                             que con dos colores guían la visión periférica para facilitar la orientación de los dedos y mantener
+                            la fluidez.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(7)">Comprar</a>
+                            <small class="text-muted">$100</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/5.jpg" class="card-img-top" alt="Producto 5" style="width: 350px; height: 495px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Monitor curvo</h5>
+                        <p class="card-text">Monitor lider en el mundo de los monitores curvos, con una velocidad impresionante.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(8)">Comprar</a>
+                            <small class="text-muted">$600</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/6.jpg" class="card-img-top" alt="Producto 6" style="width: 350px; height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Case</h5>
+                        <p class="card-text">Xigmatek Overtake, una caja para PC Rainbow RGB de nueva generación
+                            con cristal templado frontal, izquierdo y derecho, el chasis de la carcasa diseñado 
+                            para todos los juegos E-ATX, ATX, M-ATX principales o placas base profesionales.
+                            6 ventiladores ARGB</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(9)">Comprar</a>
+                            <small class="text-muted">$450</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/7.jpg" class="card-img-top" alt="Producto 7" style="width: 350px; height: 400px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Auriculares</h5>
+                        <p class="card-text">Concebidos para ganar. Los audífonos con micrófono PRO X 2 LIGHTSPEED
+                            ofrecen sonido profesional, tecnología inalámbrica LIGHTSPEED y confort superior 
+                            para alcanzar los más altos niveles de competencia.Oye cada paso, acción y tiro de anilla 
+                            de granada con el inmersivo espacio sonoro que posibilitan los transductores de grafeno.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(10)">Comprar</a>
+                            <small class="text-muted">$120</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/8.jpg" class="card-img-top" alt="Producto 8" style="width: 350px; height: 450px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Motherboard  ROG MAXIMUS Z690 EXTREME</h5>
+                        <p class="card-text">Tarjeta madre Intel® Z690 EATX con 24 + 1 fases de poder,
+                             DDR5 con OptiMem III, cinco M.2, puerto de panel frontal USB 3.2 Gen 2x2 
+                             con soporte Quick Charge 4+, Dual Thunderbolt™ 4, PCIe® 5.0, Wi-Fi 6E integrado
+                              e iluminación Aura Sync RGB.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(11)">Comprar</a>
+                            <small class="text-muted">$500</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="img/9.jpg" class="card-img-top" alt="Producto 9" style="width: 350px; height: 548px;">
+                    <div class="card-body">
+                        <h5 class="card-title">Windows 11 Pro</h5>
+                        <p class="card-text">Windows 11 Pro está diseñado para ofrecer seguridad
+                             y rendimiento en una amplia variedad de dispositivos y configuraciones.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="comprar.html" class="btn btn-primary" onclick="setProduc(12)">Comprar</a>
+                            <small class="text-muted">$60</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Contacto -->
+<center>
+    <section id="contacto" class="bg-light py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Contacto</h2>
+        <div class="row">
+          <div class="col-md-6">
+            <h4>Ubicación</h4>
+            <p>Colonia los pinares, Chalatenango, El Salvador</p>
+          </div>
+          <div class="col-md-6">
+            <h4>Contáctanos</h4>
+            <p>Teléfono: 2301-2486</p>
+            <p>Email: <a href="TecnoMarket@gmail.com">TecnoMarket@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </center>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+      <div class="container">
+        <p class="m-0">© 2024 TecnoMarket. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+         function setProduc(id){
+      localStorage.setItem("item",id)
+    }
+    </script>
+</body>
+</html>

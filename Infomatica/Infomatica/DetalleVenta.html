@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalle de Venta - TecnoMarket</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">TecnoMarket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a id="linksesion" class="nav-link" href="login.html"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Detalle de Venta -->
+  <div class="container mt-5">
+    <h2>Detalle de la Venta</h2>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Número de Venta: #<span id="numero-venta"></span></h5>
+        <p class="card-text"><strong>Fecha:</strong> <span id="fecha-actual"></span></p>
+        <p class="card-text"><strong>Cliente:</strong> Juan Pérez</p>
+        <p class="card-text"><strong>Productos Comprados:</strong></p>
+        <ul class="list-group">
+          <li class="list-group-item">Laptop Dell XPS 13 - $1,200.00</li>
+        </ul>
+        <p class="card-text mt-3"><strong>Total:</strong> $1,200.00</p>
+      </div>
+    </div>
+    <a href="index.html" class="btn btn-primary mt-3">Volver al Inicio</a>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", 
+                   "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+    
+    const fecha = new Date();
+    const dia = fecha.getDate();
+    const mes = meses[fecha.getMonth()];
+    const año = fecha.getFullYear();
+
+    document.getElementById('fecha-actual').textContent = `${dia} de ${mes} de ${año}`;
+
+    function generarNumeroVenta(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    const numeroVenta = generarNumeroVenta(100000, 999999);
+    document.getElementById('numero-venta').textContent = numeroVenta;
+</script>
+
+</body>
+</html>

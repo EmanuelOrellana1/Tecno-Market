@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Artículos Informáticos</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="index.html">TecnoMarket</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="productos.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contacto">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a id="linksesion" class="nav-link" href="login.html"></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="display-4">Bienvenidos a TecnoMarket</h1>
+      <p class="lead">Tu tienda de confianza en artículos informáticos</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container my-5">
+    <section id="productos">
+      <h2 class="text-center mb-4">Nuestros Productos</h2>
+      <div class="row">
+        <!-- Producto 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/laptop.jpeg" class="card-img-top" alt="Laptop" style="width: 350px; height: 400px;">
+            <div class="card-body">
+              <h5 class="card-title">Laptop</h5>
+              <p class="card-text">Laptop de alta gama para profesionales.</p>
+              <p class="card-text">Precio:$1090.00</p>
+              <a href="comprar.html" class="btn btn-primary" onclick="setProduc(1)">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/mouse.jpg" class="card-img-top" alt="Mouse" style="width: 350px; height: 400px;">
+            <div class="card-body">
+              <h5 class="card-title">Mouse</h5>
+              <p class="card-text">Mouse ergonómico para largas jornadas de trabajo.</p>
+              <p class="card-text">Precio:$55.00</p>
+              <a href="comprar.html" class="btn btn-primary" onclick="setProduc(2)">Comprar</a>
+            </div>
+          </div>
+        </div>
+        <!-- Producto 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <img src="img/keyboard.jpg" class="card-img-top" alt="Teclado" style="width: 350px; height: 400px;">
+            <div class="card-body">
+              <h5 class="card-title">Teclado</h5>
+              <p class="card-text">Teclado mecánico con retroiluminación RGB.</p>
+              <p class="card-text">Precio:$45.00</p>
+              <a href="comprar.html" class="btn btn-primary" onclick="setProduc(3)" >Comprar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Contacto -->
+   <center>
+  <section id="contacto" class="bg-light py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Contacto</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h4>Ubicación</h4>
+          <p>Colonia los pinares, Chalatenango, El Salvador</p>
+        </div>
+        <div class="col-md-6">
+          <h4>Contáctanos</h4>
+          <p>Teléfono: 2301-2486</p>
+          <p>Email: <a href="TecnoMarket@gmail.com">TecnoMarket@gmail.com</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+</center>
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <p class="m-0">© 2024 TecnoMarket. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    if(localStorage.getItem("login")==="ok"){
+      document.getElementById('linksesion').textContent = 'Cerrar sesión';
+    }else{
+      document.getElementById('linksesion').textContent = 'Inicia sesión';
+    }
+    const cierredecesion=document.getElementById('linksesion');
+    if(cierredecesion.textContent==='Cerrar sesión'){
+      cierredecesion.addEventListener('click',function(event){
+        event.preventDefault();
+        localStorage.removeItem('login');
+        window.location.href='login.html';
+      })
+    }
+    function setProduc(id){
+      localStorage.setItem("item",id)
+    }
+  </script>
+</body>
+</html>
